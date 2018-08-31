@@ -1,0 +1,75 @@
+<%- include ../../../partials/admin/dashboard -%>
+<div class="content-wrapper py-3">
+  <div class="container-fluid">
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-fw fa-code"></i>
+            New Post
+          </div>
+          <h5 style="display:none" ></h5>
+          <script type="text/javascript">
+          	var msg = $('#msg').html();
+          	if(msg != ""){
+          		swal ( "Oops" , msg ,  "error" );
+
+          	}
+          </script>
+          <div class="card-body">
+              <form id="add-post" action="" method="post" enctype="multipart/form-data">
+              	<div class="form-group">
+	              	<label>Title</label>
+	              	<input class="form-control" type="text" name="title" value="${item.title}" />
+              	</div>
+              	
+              	<div class="form-group">
+	              	<label>Content</label>
+	              	<textarea  class="form-control" name="content" rows="8" cols=""></textarea>
+              	</div>
+              	
+                
+              	
+              	<div class="form-group">
+	              	<label>Category</label>
+	              	<select class="form-control" name="cat_id">
+	              		
+	              		<option value="${cat.id}" ></option>
+	              		
+	              	</select>
+              	</div>
+              	<div class="form-group">
+	              	<label>Image</label>
+	              	<input class="form-control" type="file" name="picture" onchange="loadFile(event)" value="" />
+              		<img width="250px" height="150px" src="" id = "output">
+              	</div>
+              	<script>
+        				  var loadFile = function(event) {
+        				    var output = document.getElementById('output');
+        				    output.src = URL.createObjectURL(event.target.files[0]);
+        				  };
+        				</script>
+              	<div>
+              		<input class="btn btn-primary" type="submit" name="submit" value="Add" />
+              	</div>
+              </form>
+              
+            <script type="text/javascript">
+      				$(document).ready(function() {
+      					$("#add-post").validate({
+      						ignore: [],
+      			            debug: false,
+      						rules: {
+      							title:"required",
+      							content:"required",
+      						},
+      						messages: {
+      							title:"Vui lòng nhập tiêu đề",
+      							content:"Vui lòng nhập nội dung",
+      						}
+      					});
+      				});
+      			</script>
+          </div>
+        </div>
+      </div>
+  </div>
+  <%- include ../../../partials/admin/footer -%>

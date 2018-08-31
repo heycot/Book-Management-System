@@ -1,0 +1,73 @@
+<%- include ../../partials/public/header -%>
+		<!--endheader-->
+
+        <div class="container-fluid">
+
+            <div class="book-add">
+
+                <div class="col-xs-12 col-md-8">
+                    <h1>Add book</h1>
+
+                    <form id="w0" action="/addbook" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="_csrf" value="TTlsZmszRk5gFAQ0B2UlOAd0A1QgUQJ5IG5cPgVmcgoLXT40LVdrdw==">
+                        <div class="form-group field-bookformtemp-book_name required">
+                            <label class="control-label" for="bookformtemp-book_name">Book Name</label>
+                            <input type="text" id="bookformtemp-book_name" class="form-control" name="BookFormTemp[book_name]">
+
+                            <div class="help-block"></div>
+                        </div>
+                        <div class="form-group field-bookformtemp-your_name required">
+                            <label class="control-label" for="bookformtemp-your_name">Your Name</label>
+                            <input type="text" id="bookformtemp-your_name" class="form-control" name="BookFormTemp[your_name]">
+
+                            <div class="help-block"></div>
+                        </div>
+                        <div class="form-group field-bookformtemp-author_name required">
+                            <label class="control-label" for="bookformtemp-author_name">Author Name</label>
+                            <input type="text" id="bookformtemp-author_name" class="form-control" name="BookFormTemp[author_name]">
+
+                            <div class="help-block"></div>
+                        </div>
+                        <div class="form-group field-bookformtemp-genre_name">
+                            <label class="control-label" for="bookformtemp-genre_name">Genre</label>
+                            <input type="text" id="bookformtemp-genre_name" class="form-control" name="BookFormTemp[genre_name]">
+
+                            <div class="help-block"></div>
+                        </div>
+                        <div class="form-group field-bookformtemp-book_description">
+                            <label class="control-label" for="bookformtemp-book_description">Book Description</label>
+                            <textarea id="bookformtemp-book_description" class="form-control" name="BookFormTemp[book_description]" rows="6"></textarea>
+
+                            <div class="help-block"></div>
+                        </div>
+                        <div class="form-group field-bookformtemp-cover_file">
+                            <label class="control-label" for="bookformtemp-cover_file">Cover</label>
+                            <input type="hidden" name="BookFormTemp[cover_file]" value="">
+                            <input type="file" id="bookformtemp-cover_file" name="BookFormTemp[cover_file]">
+
+                            <div class="help-block"></div>
+                        </div>
+                        <div class="form-group field-bookformtemp-book_file">
+                            <label class="control-label" for="bookformtemp-book_file">Book File</label>
+                            <input type="hidden" name="BookFormTemp[book_file]" value="">
+                            <input type="file" id="bookformtemp-book_file" name="BookFormTemp[book_file]">
+
+                            <div class="help-block"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!--rightbar-->
+                <%- include ../../partials/public/right-bar -%>
+                <!--endrightbar-->
+
+            </div>
+        </div>
+    </div>
+<%- include ../../partials/public/footer -%>
+    
